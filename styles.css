@@ -1,0 +1,173 @@
+/* C:\Users\quads\OneDrive\Documents\AI-projects\crossbow-reticle-visualization\styles.css */
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+#root { 
+    display: flex; 
+    flex-direction: column; 
+    width: 100%;
+    max-width: 1000px; /* Reduced max-width for smaller layout */
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 15px; /* Reduced padding */
+    overflow: hidden; /* Prevent internal scrolling */
+}
+
+.header {
+    text-align: center;
+    font-size: 1.2rem; /* Reduced font size */
+    margin-bottom: 8px;
+}
+
+.magnification-readout {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1rem; /* Reduced font size */
+    font-weight: bold;
+}
+
+.controls { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    gap: 8px; 
+    margin-bottom: 12px; 
+}
+
+.input-group { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-group label { 
+    font-weight: bold; 
+    font-size: 0.8rem; /* Reduced font size */
+    margin-bottom: 4px; 
+}
+
+input[type="range"] { 
+    width: 100%; 
+}
+
+input[type="number"] { 
+    width: 50px; /* Reduced width */
+    font-size: 0.8rem; /* Reduced font size */
+    margin-top: 4px;
+}
+
+.distance-drops-container {
+    margin-bottom: 12px;
+    flex: 1;
+    overflow: auto;
+}
+
+.distance-drops-container h2 {
+    text-align: center;
+    font-size: 1rem; /* Reduced font size */
+    margin-bottom: 8px;
+}
+
+.distance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Reduced min-width */
+    gap: 8px;
+    text-align: center;
+}
+
+.distance-grid-item {
+    background-color: #333;
+    color: #fff;
+    padding: 6px; /* Reduced padding */
+    border-radius: 5px;
+    font-size: 0.8rem; /* Reduced font size */
+}
+
+.readouts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+    color: red; /* Set font color to red */
+}
+
+.readout-item {
+    font-size: 0.9rem; /* Reduced font size */
+    margin: 1px 0;
+}
+
+.visualization { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+}
+
+svg {
+    width: 80vw; /* Reduced width */
+    max-width: 400px; /* Reduced max-width */
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.reticle-text { 
+    font-size: 0.7rem; /* Reduced font size */
+}
+
+/* Adjust text within SVG */
+svg text {
+    font-size: 8px; /* Reduced font size */
+    fill: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .controls {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjusted for smaller screens */
+    }
+
+    .header {
+        font-size: 1rem; /* Further reduced font size */
+    }
+
+    .magnification-readout {
+        font-size: 0.9rem;
+    }
+
+    .distance-drops-container h2 {
+        font-size: 0.9rem;
+    }
+
+    .distance-grid-item {
+        font-size: 0.7rem;
+    }
+
+    svg {
+        max-width: 100%;
+    }
+
+    .readout-item {
+        font-size: 0.8rem;
+    }
+}
